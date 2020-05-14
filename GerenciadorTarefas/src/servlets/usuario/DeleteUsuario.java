@@ -26,7 +26,6 @@ public class DeleteUsuario extends HttpServlet {
 			response.sendRedirect("login.jsp");
 			return;
 		}
-		
 
 		String confirm = request.getParameter("confirm");
 		Validation v = new Validation();

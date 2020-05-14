@@ -58,20 +58,6 @@ public class UsuarioDAO {
 
 	public void excluir(Usuario usuario) {
 
-		String excluir = "DELETE FROM usuario WHERE email = ?;";
-
-		try (PreparedStatement pst = conexao.prepareStatement(excluir)) {
-
-			pst.setString(1, usuario.getEmail());
-
-			pst.execute();
-
-		} catch (SQLException ex) {
-
-			System.err.println("Não foi possível manipular a tabela Usuario.");
-			ex.printStackTrace();
-		}
-
 		String excluirTarefas = "DELETE FROM tarefas WHERE fk_usuario_email = ?;";
 
 		try (PreparedStatement pst = conexao.prepareStatement(excluirTarefas)) {
@@ -83,6 +69,20 @@ public class UsuarioDAO {
 		} catch (SQLException ex) {
 
 			System.err.println("Não foi possível manipular a tabela Tarefas.");
+			ex.printStackTrace();
+		}
+
+		String excluir = "DELETE FROM usuario WHERE email = ?;";
+
+		try (PreparedStatement pst = conexao.prepareStatement(excluir)) {
+
+			pst.setString(1, usuario.getEmail());
+
+			pst.execute();
+
+		} catch (SQLException ex) {
+
+			System.err.println("Não foi possível manipular a tabela Usuario.");
 			ex.printStackTrace();
 		}
 	}

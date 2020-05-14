@@ -28,7 +28,7 @@ public class TarefaDAO {
 			pst.setString(2, tarefa.getDescricao());
 			pst.setString(3, tarefa.getUsuario().getEmail());
 
-			//pst.execute();
+			pst.execute();
 
 		} catch (SQLException ex) {
 

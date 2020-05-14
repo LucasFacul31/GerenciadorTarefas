@@ -9,7 +9,8 @@
 <%@page import="model.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="service.TarefaService,model.Tarefa,java.util.ArrayList"%>
+<%@ page
+	import="service.TarefaService,model.Tarefa,model.Usuario,java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,8 +46,8 @@
 			</div>
 			<div class="col">
 				<a href="excluir-conta.jsp" class="btn btn-danger">Excluir conta</a>
-				<a href="editar-conta.jsp" class="btn btn-secondary">Editar conta</a>
-				<a href="adicionar-tarefa.jsp" class="btn btn-primary">Adicionar
+				<a href="editar-conta.jsp" class="btn btn-secondary">Editar
+					conta</a> <a href="adicionar-tarefa.jsp" class="btn btn-primary">Adicionar
 					tarefa</a>
 			</div>
 			<div class="col-md-2 text-right">
@@ -59,6 +60,7 @@
 			<%
 				usuario = (Usuario) request.getSession().getAttribute("usuario");
 			lista = ts.listarTarefasUsuario(usuario);
+
 			if (lista.isEmpty()) {
 				out.print("<div class=\"col\">");
 				out.print("<p>Nenhuma tarefa encontada. <a href=\"adicionar-tarefa.jsp\">Adicione uma tarefa agora mesmo!</a></p>");
