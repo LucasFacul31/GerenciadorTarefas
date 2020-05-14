@@ -20,11 +20,11 @@ public class ConnectionFactory {
 		try {
 			String server = "localhost";
 
-			String database = "web_produtos";
+			String database = "web_tarefas";
 
 			String url = "jdbc:mysql://" + server + "/" + database;
 
-			String parameters = "?useTimezone=true&serverTimezone=UTC";
+			String parameters = "?useTimezone=true&serverTimezone=UTC&characterEncoding=UTF-8";
 
 			String username = "root";
 

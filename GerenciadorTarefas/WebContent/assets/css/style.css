@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.container-fluid {
+	max-width: 1200px;
+    margin: 4rem auto;
+}
+
+.form-default {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.box-tarefa {
+    border: 2px solid #d4d4d4;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.container-btn {
+    display: grid;
+    grid-gap: 1rem;
+    max-width: 200px;
+    margin: 2rem auto 0;
+}
